@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add styles for the grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Style for the left column (washing machine interaction) */
+.left-column {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Style for the right column (maintenance) */
+.right-column {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.coin-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.cancel-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Style for the button when it is disabled */
+.cancel-button:disabled {
+  opacity: 0.5; /* Make the button semi-transparent */
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+}
+
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: orange;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
