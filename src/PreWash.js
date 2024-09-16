@@ -3,12 +3,22 @@ export const insertCoin = (amount, totalAmount) => {
 };
 
 export const selectWash = (wash, totalAmount, setMessage, setSelectedWash) => {
+  console.log("selectWash - wash:", wash);
+  console.log("selectWash - totalAmount:", totalAmount);
+  console.log("selectWash - setMessage:", setMessage);
+  console.log("selectWash - setSelectedWash:", setSelectedWash);
+
+  // No money inserted
+  if (totalAmount === 0) {
+    return -1;
+  }
+
   if (totalAmount >= wash.cost) {
     setSelectedWash(wash);
 
     // Refund excess money if the user overpaid
-    const excess = totalAmount - wash.cost;
-    if (excess >= 0) {
+    const excess = parseFloat((totalAmount - wash.cost).toFixed(1));
+    if (excess > 0) {
       setMessage(
         `Success! ${wash.name} started. Refunded: $${excess.toFixed(2)}`
       );

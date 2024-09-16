@@ -60,6 +60,18 @@
   border: 1px solid #ccc;
 }
 
+.coin-buttons-row {
+  display: flex;
+  align-items: center; /* Center items vertically within the container */
+  justify-content: center; /* Center the buttons horizontally within the container */
+  gap: 10px; /* Space between buttons */
+}
+.coin-label {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 16px;
+}
 .coin-button {
   border-radius: 6px;
   border-width: 1px;
@@ -67,7 +79,9 @@
   margin-bottom: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff; /* Default background color */
+  background-color: #007bff;
+  line-height: 1.5;
+  text-align: center;
   color: white; /* Default text color */
   border: 1px solid transparent; /* To maintain border when pressed */
   transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s;
@@ -119,4 +133,46 @@
   background-color: darkorange;
   transform: scale(0.98);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-box {
+  background-color: #cdf1ff; /* Light red background for status box */
+  border: 1px solid #f5c6cb; /* Red border */
+  color: #2b2b2b; /* Dark red text color */
+  padding: 10px; /* Padding inside the box */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 20px; /* Spacing below the status box */
+  font-size: 16px; /* Font size */
+}
+
+/* Flex container for the progress text and progress bar */
+.progress-container {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between items */
+  margin-top: 10px; /* Space above the container */
+}
+/* Style for the progress text */
+.progress-text {
+  margin: 0; /* Remove default margin */
+  font-size: 16px; /* Adjust font size as needed */
+  flex-shrink: 0; /* Prevent the text from shrinking */
+}
+/* Container for the progress bar */
+.progress-bar-container {
+  flex-grow: 1; /* Allow the container to grow and fill available space */
+  background-color: #e0e0e0; /* Light gray background */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Ensure no content spills out */
+  margin-left: 10px; /* Space between text and progress bar */
+}
+/* Style for the progress bar */
+.progress-bar {
+  height: 20px; /* Height of the progress bar */
+  background-color: #4caf50; /* Green background for progress */
+  text-align: center; /* Center text inside the bar */
+  line-height: 20px; /* Vertically center text */
+  color: white; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  transition: width 0.4s ease; /* Smooth transition for width change */
 }

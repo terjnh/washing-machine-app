@@ -21,16 +21,24 @@ function App() {
   const [doorStatus, setDoorStatus] = useState("Unlocked");
   const [totalTimeSwitchedOn, setTotalTimeSwitchedOn] = useState(0);
   const [insufficientFunds, setInsufficientFunds] = useState(false);
+  const [totalMoneyEarned, setTotalMoneyEarned] = useState(0);
 
   const washTimerRef = useRef(null); // Timer for washing cycle
   const maintenanceTimerRef = useRef(null); // Timer for maintenance statistics
 
   const washes = [
+    { name: "Test Wash 1", duration: 1 * 6, cost: 2 },
     { name: "Quick Wash", duration: 10 * 60, cost: 2 },
     { name: "Mild Wash", duration: 30 * 60, cost: 2.5 },
     { name: "Medium Wash", duration: 45 * 60, cost: 4.2 },
     { name: "Heavy Wash", duration: 60 * 60, cost: 6 },
   ];
+
+  useEffect(() => {
+    const stats = getStatistics();
+    setTotalTimeSwitchedOn(stats.totalTimeSwitchedOn);
+    setTotalMoneyEarned(stats.totalMoneyEarned);
+  }, []);
 
   useEffect(() => {
     if (isWashing) {
@@ -69,6 +77,7 @@ function App() {
       setSelectedWash
     );
 
+    console.log("newAmount=", newAmount);
     if (newAmount < 0) {
       setInsufficientFunds(true);
       setMessage(`Insufficient funds for ${wash.name}. Please add more money.`);
@@ -77,6 +86,7 @@ function App() {
       setTotalAmount(newAmount);
       if (newAmount === 0) {
         handleStartWashing(wash);
+        setTotalMoneyEarned((prevAmount) => prevAmount + wash.cost);
       }
     }
   };
@@ -88,8 +98,9 @@ function App() {
 
   const handleResetStatistics = () => {
     resetStatistics();
-    setMessage("Statistics have been reset.");
+    setTotalMoneyEarned(0);
     setTotalTimeSwitchedOn(0);
+    setMessage("Statistics have been reset.");
   };
 
   const statistics = getStatistics();
@@ -100,8 +111,9 @@ function App() {
       <div className="grid-container">
         <div className="left-column">
           <h3>Total Amount Inserted: ${totalAmount.toFixed(2)}</h3>
-          <div>
-            <h4>Insert Coins:</h4>
+          {message && <div className="status-box">{message}</div>}
+          <div className="coin-buttons-row">
+            <p className="coin-label">Insert Coins:</p>
             <button
               className="coin-button"
               onClick={() => setTotalAmount(insertCoin(0.1, totalAmount))}
@@ -155,7 +167,6 @@ function App() {
               Cancel and Refund
             </button>
           </div>
-          {message && <p>{message}</p>}
         </div>
 
         <div className="right-column">
@@ -165,15 +176,24 @@ function App() {
                 Selected: {selectedWash.name} - {selectedWash.duration / 60}{" "}
                 minutes
               </h4>
+              <h4>Door Status: {doorStatus}</h4>
               {isWashing && (
                 <div>
-                  <h4>
-                    Washing Progress: {progress.progressPercentage.toFixed(0)}%
-                  </h4>
-                  <h4>
-                    Remaining Time: {Math.floor(progress.remainingTime)} seconds
-                  </h4>
-                  <h4>Door Status: {doorStatus}</h4>
+                  <div className="progress-container">
+                    <p className="progress-text">
+                      Washing Progress: {progress.progressPercentage.toFixed(0)}
+                      % <br />
+                      Remaining Time: {Math.floor(progress.remainingTime)}{" "}
+                      seconds
+                    </p>
+                    <p></p>
+                    <div className="progress-bar-container">
+                      <div
+                        className="progress-bar"
+                        style={{ width: `${progress.progressPercentage}%` }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -181,7 +201,7 @@ function App() {
           <br />
           <h2>Maintenance Statistics</h2>
           <p>Total Time Switched On: {totalTimeSwitchedOn} seconds</p>
-          <p>Total Money Earned: ${statistics.totalMoneyEarned}</p>
+          <p>Total Money Earned: ${totalMoneyEarned}</p>
           <button className="reset-button" onClick={handleResetStatistics}>
             Reset Statistics
           </button>
