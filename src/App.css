@@ -60,11 +60,18 @@
   border: 1px solid #ccc;
 }
 
+.wash-buttons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .coin-buttons-row {
   display: flex;
-  align-items: center; /* Center items vertically within the container */
-  justify-content: center; /* Center the buttons horizontally within the container */
-  gap: 10px; /* Space between buttons */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .coin-label {
   margin-right: 10px;
@@ -90,6 +97,10 @@
   background-color: #0056b3; /* Darker background color when pressed */
   transform: scale(0.98); /* Slightly shrink the button */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to give a pressed effect */
+}
+.coin-button:disabled {
+  opacity: 0.5; /* Make the button semi-transparent */
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
 }
 
 .cancel-button {
@@ -136,8 +147,8 @@
 }
 
 .status-box {
-  background-color: #cdf1ff; /* Light red background for status box */
-  border: 1px solid #f5c6cb; /* Red border */
+  background-color: #cdf1ff;
+  border: 1px solid #93c7dc;
   color: #2b2b2b; /* Dark red text color */
   padding: 10px; /* Padding inside the box */
   border-radius: 4px; /* Rounded corners */

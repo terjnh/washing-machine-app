@@ -5,8 +5,6 @@ export const insertCoin = (amount, totalAmount) => {
 export const selectWash = (wash, totalAmount, setMessage, setSelectedWash) => {
   console.log("selectWash - wash:", wash);
   console.log("selectWash - totalAmount:", totalAmount);
-  console.log("selectWash - setMessage:", setMessage);
-  console.log("selectWash - setSelectedWash:", setSelectedWash);
 
   // No money inserted
   if (totalAmount === 0) {

@@ -31,7 +31,7 @@ function App() {
     { name: "Quick Wash", duration: 10 * 60, cost: 2 },
     { name: "Mild Wash", duration: 30 * 60, cost: 2.5 },
     { name: "Medium Wash", duration: 45 * 60, cost: 4.2 },
-    { name: "Heavy Wash", duration: 60 * 60, cost: 6 },
+    // { name: "Heavy Wash", duration: 60 * 60, cost: 6 },
   ];
 
   useEffect(() => {
@@ -111,7 +111,7 @@ function App() {
       <div className="grid-container">
         <div className="left-column">
           <h3>Total Amount Inserted: ${totalAmount.toFixed(2)}</h3>
-          {message && <div className="status-box">{message}</div>}
+          <div className="status-box">{message}</div>
           <div className="coin-buttons-row">
             <p className="coin-label">Insert Coins:</p>
             <button
@@ -141,18 +141,21 @@ function App() {
           </div>
           <div>
             <h4>Select Wash Type:</h4>
-            {washes.map((wash, index) => (
-              <div key={index}>
-                <button
-                  className="coin-button"
-                  onClick={() => handleWashSelection(wash)}
-                  disabled={isWashing && !insufficientFunds}
-                >
-                  {wash.name} - {wash.duration / 60} minutes - $
-                  {wash.cost.toFixed(2)}
-                </button>
-              </div>
-            ))}
+            <div className="wash-buttons-row">
+              {washes.map((wash, index) => (
+                <div key={index}>
+                  <button
+                    className="coin-button"
+                    onClick={() => handleWashSelection(wash)}
+                    disabled={isWashing && !insufficientFunds}
+                  >
+                    {wash.name}
+                    <br />
+                    {wash.duration / 60} minutes ${wash.cost.toFixed(2)}
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
           <div>
             <button
@@ -200,7 +203,7 @@ function App() {
           )}
           <br />
           <h2>Maintenance Statistics</h2>
-          <p>Total Time Switched On: {totalTimeSwitchedOn} seconds</p>
+          <p>Total Running Time: {totalTimeSwitchedOn} seconds</p>
           <p>Total Money Earned: ${totalMoneyEarned}</p>
           <button className="reset-button" onClick={handleResetStatistics}>
             Reset Statistics
