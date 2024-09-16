@@ -28,10 +28,13 @@ function App() {
 
   const washes = [
     { name: "Test Wash 1", duration: 1 * 6, cost: 2 },
+    { name: "Test Wash 2", duration: 1 * 12, cost: 2.5 },
+    { name: "Test Wash 3", duration: 1 * 18, cost: 4.2 },
+    { name: "Test Wash 4", duration: 1 * 24, cost: 6 },
     { name: "Quick Wash", duration: 10 * 60, cost: 2 },
     { name: "Mild Wash", duration: 30 * 60, cost: 2.5 },
     { name: "Medium Wash", duration: 45 * 60, cost: 4.2 },
-    // { name: "Heavy Wash", duration: 60 * 60, cost: 6 },
+    { name: "Heavy Wash", duration: 60 * 60, cost: 6 },
   ];
 
   useEffect(() => {
@@ -145,7 +148,7 @@ function App() {
               {washes.map((wash, index) => (
                 <div key={index}>
                   <button
-                    className="coin-button"
+                    className="wash-button"
                     onClick={() => handleWashSelection(wash)}
                     disabled={isWashing && !insufficientFunds}
                   >
@@ -179,7 +182,11 @@ function App() {
                 Selected: {selectedWash.name} - {selectedWash.duration / 60}{" "}
                 minutes
               </h4>
-              <h4>Door Status: {doorStatus}</h4>
+              <h4
+                className={`door-status door-status-${doorStatus.toLowerCase()}`}
+              >
+                Door Status: {doorStatus}
+              </h4>
               {isWashing && (
                 <div>
                   <div className="progress-container">
@@ -202,12 +209,14 @@ function App() {
             </div>
           )}
           <br />
-          <h2>Maintenance Statistics</h2>
-          <p>Total Running Time: {totalTimeSwitchedOn} seconds</p>
-          <p>Total Money Earned: ${totalMoneyEarned}</p>
-          <button className="reset-button" onClick={handleResetStatistics}>
-            Reset Statistics
-          </button>
+          <div className="maintenance-container">
+            <h2>Maintenance Statistics</h2>
+            <p>Total Running Time: {totalTimeSwitchedOn} seconds</p>
+            <p>Total Money Earned: ${totalMoneyEarned}</p>
+            <button className="reset-button" onClick={handleResetStatistics}>
+              Reset Statistics
+            </button>
+          </div>
         </div>
       </div>
     </div>
