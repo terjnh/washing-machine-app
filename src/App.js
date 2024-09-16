@@ -34,20 +34,15 @@ function App() {
 
   useEffect(() => {
     if (isWashing) {
-      // Start the timer for washing
-      // washTimerRef.current = setInterval(() => {
-      //   console.log("setElapsedTime---useEffect(isWashing)");
-      //   setElapsedTime((prevTime) => prevTime + 1); // Increment elapsed time by 1 second
-      // }, 1000);
-
-      // Start the maintenance timer
+      // Start the maintenance timer - 1000ms between each execution
       maintenanceTimerRef.current = setInterval(() => {
         updateTotalTimeSwitchedOn(1);
         setTotalTimeSwitchedOn((prev) => prev + 1);
       }, 1000);
     } else {
-      clearInterval(washTimerRef.current); // Clear the washing timer when washing stops
-      clearInterval(maintenanceTimerRef.current); // Clear the maintenance timer when washing stops
+      // clear the timers when washing stops
+      clearInterval(washTimerRef.current);
+      clearInterval(maintenanceTimerRef.current);
     }
 
     return () => {
@@ -57,7 +52,6 @@ function App() {
   }, [isWashing]);
 
   const handleStartWashing = (wash) => {
-    console.log("setElapsedTime(0)");
     setElapsedTime(0); // Reset elapsed time at the start of a new wash
     startWashingProcess(
       wash.duration,
