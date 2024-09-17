@@ -4,10 +4,13 @@ This was built upon the React framework.
 
 ## Instructions
 
-- Install necessary `node_modules` using:
-  - $ npm install
-- To run the app on localhost:3000:
-  - $ npm start
+1. To run and view app on localhost:
+   - Install necessary `node_modules` using:
+     - $ npm install
+   - To run the app on localhost:3000:
+     - $ npm start
+2. To view on vercel:
+   - https://washing-machine-app.vercel.app/
 
 ### Description
 
@@ -28,4 +31,4 @@ This was built upon the React framework.
 
 1. Comment out the first 4 items in the 'washes' array in App.js to view the test buttons,
    which will run the machine on shorter durations.
-   ![Washing Machine](./public/testbuttons.png)
+   <img src="./public/testbuttons.png" alt="Washing Machine" width="400"/>
