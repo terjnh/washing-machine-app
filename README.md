@@ -28,4 +28,4 @@ This was built upon the React framework.
 
 1. Comment out the first 4 items in the 'washes' array in App.js to view the test buttons,
    which will run the machine on shorter durations.
-   ![Washing Machine](./public/washing_machine.png)
+   ![Washing Machine](./public/testbuttons.png)
