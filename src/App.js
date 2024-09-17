@@ -23,7 +23,7 @@ function App() {
   const [insufficientFunds, setInsufficientFunds] = useState(false);
   const [totalMoneyEarned, setTotalMoneyEarned] = useState(0);
 
-  const washTimerRef = useRef(null); // Timer for washing cycle
+  const washTimerRef = useRef(null); // Timer for single washing cycle
   const maintenanceTimerRef = useRef(null); // Timer for maintenance statistics
 
   const washes = [
@@ -56,14 +56,15 @@ function App() {
       clearInterval(maintenanceTimerRef.current);
     }
 
+    // Cleanup upon unmount
     return () => {
-      clearInterval(washTimerRef.current); // Cleanup on unmount
-      clearInterval(maintenanceTimerRef.current); // Cleanup on unmount
+      clearInterval(washTimerRef.current);
+      clearInterval(maintenanceTimerRef.current);
     };
   }, [isWashing]);
 
   const handleStartWashing = (wash) => {
-    setElapsedTime(0); // Reset elapsed time at the start of a new wash
+    setElapsedTime(0); // start of new wash -> reset elapsed timer
     startWashingProcess(
       wash.duration,
       setElapsedTime,
@@ -80,7 +81,7 @@ function App() {
       setSelectedWash
     );
 
-    console.log("newAmount=", newAmount);
+    // console.log("newAmount=", newAmount);
     if (newAmount < 0) {
       setInsufficientFunds(true);
       setMessage(`Insufficient funds for ${wash.name}. Please add more money.`);

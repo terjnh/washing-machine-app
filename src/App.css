@@ -37,28 +37,25 @@
   }
 }
 
-/* Add styles for the grid layout */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
 }
 
-/* Style for the left column (washing machine interaction) */
 .left-column {
   background-color: #f0f8ff;
   padding: 20px;
   border-radius: 8px;
 }
 
-/* Style for the right column (maintenance) */
 .right-column {
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  flex-direction: column; /* Align children vertically */
+  flex-direction: column;
   display: flex;
 }
 .maintenance-container {
@@ -71,7 +68,7 @@
 
 .wash-buttons-row {
   display: grid;
-  grid-template-columns: repeat(4, auto); /* 4 buttons per row */
+  grid-template-columns: repeat(4, auto);
   gap: 10px;
   justify-content: center;
 }
@@ -85,13 +82,13 @@
   background-color: #007bff;
   line-height: 1.5;
   text-align: center;
-  color: white; /* Default text color */
-  border: 1px solid transparent; /* To maintain border when pressed */
+  color: white;
+  border: 1px solid transparent;
   transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s;
 }
 .wash-button:disabled {
-  opacity: 0.5; /* Make the button semi-transparent */
-  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .coin-buttons-row {
@@ -116,39 +113,39 @@
   background-color: #ffa11e;
   line-height: 1.5;
   text-align: center;
-  color: black; /* Default text color */
-  border: 1px solid transparent; /* To maintain border when pressed */
+  color: black;
+  border: 1px solid transparent;
   transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s;
 }
 .coin-button:active {
-  background-color: #0056b3; /* Darker background color when pressed */
-  transform: scale(0.98); /* Slightly shrink the button */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to give a pressed effect */
+  background-color: #0056b3;
+  transform: scale(0.98);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .coin-button:disabled {
-  opacity: 0.5; /* Make the button semi-transparent */
-  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .cancel-button {
   margin-top: 20px;
-  border-radius: 99px; /* Fully rounded corners */
+  border-radius: 99px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: red; /* Background color */
-  color: white; /* Text color */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease; /* Smooth transitions */
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease;
 }
 .cancel-button:disabled {
-  opacity: 0.5; /* Make the button semi-transparent */
-  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .cancel-button:active {
-  background-color: darkred; /* Darker background color when pressed */
-  transform: scale(0.98); /* Slightly shrink the button */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow to give a pressed effect */
+  background-color: darkred;
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .reset-button {
@@ -176,21 +173,19 @@
 .status-box {
   background-color: #cdf1ff;
   border: 1px solid #93c7dc;
-  color: #2b2b2b; /* Dark red text color */
-  padding: 10px; /* Padding inside the box */
-  border-radius: 4px; /* Rounded corners */
-  margin-bottom: 20px; /* Spacing below the status box */
-  font-size: 16px; /* Font size */
+  color: #2b2b2b;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
-/* Flex container for the progress text and progress bar */
 .progress-container {
-  display: flex; /* Use flexbox layout */
-  align-items: center; /* Center items vertically */
-  gap: 10px; /* Space between items */
-  margin-top: 10px; /* Space above the container */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
-
 .progress-text {
   margin: 0;
   font-size: 16px;
