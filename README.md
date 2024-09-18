@@ -1,6 +1,7 @@
 # Design software for washing machines
 
 This was built upon the React framework.
+For the class diagram, please refer to ./public/WashingMachineClassDiagram.pdf
 
 ## Instructions
 
