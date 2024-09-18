@@ -21,11 +21,11 @@ This was built upon the React framework.
    c. Medium Wash (45 minutes - $4.20)
    d. Heavy Wash (1 hour - $6)
 3. Before the wash job starts
-   - Functions written in PreWash.js
+   - Functions written in **PreWash.js**
 4. Start/During/Completion of the washing job
-   - Functions written in WashingProgress.js
+   - Functions written in **WashingProgress.js**
 5. Maintenance
-   - Functions written in Maintenance.js
+   - Functions written in **Maintenance.js**
 
 ### Test buttons
 
