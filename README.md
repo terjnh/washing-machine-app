@@ -24,6 +24,7 @@ This was built upon the React framework.
    - Functions written in **PreWash.js**
 4. Start/During/Completion of the washing job
    - Functions written in **WashingProgress.js**
+   - During wash, some buttons will be disabled.
 5. Maintenance
    - Functions written in **Maintenance.js**
 
