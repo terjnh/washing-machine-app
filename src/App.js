@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import { insertCoin, selectWash, cancelWash } from "./PreWash";
-import {
-  updateDoorLock,
-  updateProgress,
-  startWashingProcess,
-} from "./WashingProgress";
+import { updateProgress, startWashingProcess } from "./WashingProgress";
 import {
   updateTotalTimeSwitchedOn,
   getStatistics,
@@ -114,7 +110,16 @@ function App() {
       <h1>Washing Machine</h1>
       <div className="grid-container">
         <div className="left-column">
-          <h3>Total Amount Inserted: ${totalAmount.toFixed(2)}</h3>
+          <div className="left-top-column">
+            <h3>Total Amount Inserted: ${totalAmount.toFixed(2)}</h3>
+            <button
+              className="door-button"
+              disabled={isWashing && !insufficientFunds}
+              onClick={() => setMessage("Door is unlocked.")}
+            >
+              Open Door
+            </button>
+          </div>
           <div className="status-box">{message}</div>
           <div className="coin-buttons-row">
             <p className="coin-label">Insert Coins:</p>

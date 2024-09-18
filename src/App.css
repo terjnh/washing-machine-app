@@ -49,6 +49,16 @@
   padding: 20px;
   border-radius: 8px;
 }
+.left-top-column {
+  background-color: #deeffe;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
 
 .right-column {
   background-color: #f9f9f9;
@@ -64,6 +74,29 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-top: auto;
+}
+
+.door-button {
+  border-radius: 6px;
+  border-width: 1px;
+  margin-left: 50px;
+  margin-bottom: 0px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  line-height: 1.5;
+  text-align: center;
+  color: white;
+  border: 1px solid transparent;
+}
+.door-button:active {
+  background-color: #0056b3;
+  transform: scale(0.98);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.door-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .wash-buttons-row {

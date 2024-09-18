@@ -1,16 +1,11 @@
-// Function to lock/unlock the washing machine door
-export const updateDoorLock = (isWashing) => {
-  return isWashing ? "Locked" : "Unlocked";
-};
-
-// Function to calculate washing progress based on elapsed time
+// Calculate washing progress based on elapsed time
 export function updateProgress(duration, elapsedTime) {
   const progressPercentage = (elapsedTime / duration) * 100;
   const remainingTime = duration - elapsedTime;
   return { progressPercentage, remainingTime };
 }
 
-// Function to simulate the washing process, updating every second
+// 'simulates' the washing process, updates each second
 export const startWashingProcess = (
   totalDuration,
   setElapsedTime,
@@ -21,7 +16,7 @@ export const startWashingProcess = (
   setDoorStatus("Locked");
 
   const washingInterval = setInterval(() => {
-    console.log("setElapsedTime--washingInterval");
+    // console.log("setElapsedTime--washingInterval");
     setElapsedTime((prev) => {
       const newElapsedTime = prev + 1;
       if (newElapsedTime >= totalDuration) {

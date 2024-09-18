@@ -27,7 +27,7 @@ export const selectWash = (wash, totalAmount, setMessage, setSelectedWash) => {
     // Reset the totalAmount to 0 after the wash starts
     return 0;
   } else {
-    // If the amount is insufficient
+    // Insufficient amount
     setMessage(
       `Insufficient amount. Please insert $${(wash.cost - totalAmount).toFixed(
         2
