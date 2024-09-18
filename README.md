@@ -30,6 +30,7 @@ This was built upon the React framework.
 
 ### Test buttons
 
-1. Comment out the first 4 items in the 'washes' array in App.js to view the test buttons,
-   which will run the machine on shorter durations.
-   <img src="./public/testbuttons.png" alt="Washing Machine" width="400"/>
+1. Comment out the first 4 items in the 'washes' array within **App.js** to view the test buttons,
+   which will run the machine on shorter durations. [refer to image below]
+
+<img src="./public/testbuttons.png" alt="Washing Machine" width="400"/>

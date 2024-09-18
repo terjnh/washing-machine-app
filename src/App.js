@@ -23,10 +23,10 @@ function App() {
   const maintenanceTimerRef = useRef(null); // Timer for maintenance statistics
 
   const washes = [
-    { name: "Test Wash 1", duration: 1 * 6, cost: 2 },
-    { name: "Test Wash 2", duration: 1 * 12, cost: 2.5 },
-    { name: "Test Wash 3", duration: 1 * 18, cost: 4.2 },
-    { name: "Test Wash 4", duration: 1 * 24, cost: 6 },
+    // { name: "Test Wash 1", duration: 1 * 6, cost: 2 },
+    // { name: "Test Wash 2", duration: 1 * 12, cost: 2.5 },
+    // { name: "Test Wash 3", duration: 1 * 18, cost: 4.2 },
+    // { name: "Test Wash 4", duration: 1 * 24, cost: 6 },
     { name: "Quick Wash", duration: 10 * 60, cost: 2 },
     { name: "Mild Wash", duration: 30 * 60, cost: 2.5 },
     { name: "Medium Wash", duration: 45 * 60, cost: 4.2 },
